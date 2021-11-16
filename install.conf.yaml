@@ -1,0 +1,16 @@
+---
+- clean:
+  - "~"
+- shell:
+  - - git submodule update --init --recursive
+    - Installing submodules
+      #- shell:
+      #  - - cp ~/.bashrc ~/.OLDbashrc"$(date)" || true
+      #  - - cp ~/.bash_logout ~/.OLDbash_logout"$(date)" || true
+      #  - - cp ~/.gitconfig ~/.OLDgitconfig"$(date)" || true
+      #  - - cp ~/.bash_profile ~/.OLDbash_profile"$(date)" || true
+      # - link:
+      #     "~/.config/i3":
+      #       path: config/i3/
+      #       create: true
+

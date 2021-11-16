@@ -1,0 +1,7 @@
+[submodule "z"]
+	path = z
+	url = git@github.com:rupa/z.git
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty
