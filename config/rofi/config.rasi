@@ -1,0 +1,4 @@
+configuration {
+  modi: "run,window,filebrowser,combi";
+  combi-modi: "run,window,filebrowser";
+}
