@@ -1,0 +1,72 @@
+# Quickly access the ~/.zshrc file
+alias zshrc="code ~/.zshrc"
+alias grep="grep --color"
+
+exa_binary="ls"
+#exa/ls
+alias exa="${exa_binary}"
+alias l="${exa_binary} -h"
+alias ls="${exa_binary} -h"
+alias la="${exa_binary} -ah"
+alias ll="${exa_binary} -lh"
+alias df="df -h"
+
+alias cd..="cd .."
+alias ~="cd ~"
+alias ..='cd ..'         # Go up one directory
+alias ...='cd ../..'     # Go up two directories
+alias ....='cd ../../..' # Go up three directories
+alias .....='cd ../../../..' # Go up three directories
+alias chmoud="chmod"
+
+# Git Aliases
+alias gd="git diff"
+alias gdc="git diff --cached"
+alias gcl='git clone'
+alias ga='git add'
+alias gall='git add .'
+
+alias g='git'
+alias gs='git status'
+alias gl='git pull'
+alias gp='git push'
+alias gca='git commit --amend'
+alias gcan='git commit --amend --no-edit'
+alias gcm='git commit -v -m'
+alias gsh="git show"
+alias gb='git branch'
+alias gcp='git cherry-pick'
+alias gcob='git checkout -b'
+alias gll='git log --graph --pretty=oneline --abbrev-commit'
+alias gcapf="ga . && gca --no-edit && gp -f"
+gpuo() {
+    git push -u origin $(git rev-parse --abbrev-ref HEAD)
+}
+
+alias gch='git branch -v --sort=-committerdate | fzf --layout=reverse-list --bind "enter:execute(git checkout {1})+accept-non-empty"'
+alias grb='git branch -v --sort=-committerdate | fzf --layout=reverse-list --bind "enter:execute(git rebase {1})+accept-non-empty"'
+
+# Tree
+if [ ! -x "$(which tree 2>/dev/null)" ]
+then
+  alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
+fi
+
+# Directory
+alias mkdir="mkdir -p"
+
+# Stripe aliases
+alias ij='~/stripe/zoolander/dev/ij'
+alias kk='sc kubectl -m kubemaster'
+alias ka='sc kubectl -m kubeapiaa'
+alias kb='sc kubectl -m kubeapibb'
+alias kkp='sc kubectl -m kubemaster --prod'
+alias kap='sc kubectl -m kubeapiaa --prod'
+alias kbp='sc kubectl -m kubeapibb --prod'
+
+alias mspworker='ssh $(ls-servers -QN -c east -Sqt mspworker | shuf -n 1)'
+
+alias hdsq='henson dump-skycfg --qa'
+
+alias orphans='sudo pacman -Qtdq | sudo pacman -Rns -'
+
